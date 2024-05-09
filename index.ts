@@ -26,3 +26,34 @@ function findIndex<T>(arr: T[], item: T): number | null {
 function slice<T>(arr: T[], startIndex: number, endIndex?: number): T[] {
     return arr.slice(startIndex, endIndex);
 }
+
+// 테스트 배열들
+const numbersArr = [1, 2, 3, 4, 5];
+const stringsArr = ["apple", "banana", "cherry"];
+const mixedArr = [1, "apple", true];
+
+// last 함수 테스트
+console.log("Last element of numbers:", last(numbersArr)); // 5
+console.log("Last element of strings:", last(stringsArr)); // "cherry"
+console.log("Last element of mixed:", last(mixedArr)); // true
+
+// prepend 함수 테스트
+console.log("Prepend 0 to numbers:", prepend(numbersArr, 0)); // [0, 1, 2, 3, 4, 5]
+console.log("Prepend 'orange' to strings:", prepend(stringsArr, "orange")); // ["orange", "apple", "banana", "cherry"]
+console.log("Prepend false to mixed:", prepend(mixedArr,false)); // [ false, 1, 'apple', true ]
+
+// mix 함수 테스트
+console.log("Mix numbers and strings:", mix(numbersArr, stringsArr)); // [1, 2, 3, 4, 5, "apple", "banana", "cherry"]
+
+// count 함수 테스트
+console.log("Count of numbers:", count(numbersArr)); // 5
+console.log("Count of strings:", count(stringsArr)); // 3
+
+// findIndex 함수 테스트
+console.log("Find index of 'banana' in strings:", findIndex(stringsArr, "banana")); // 1
+console.log("Find index of 6 in numbers:", findIndex(numbersArr, 6)); // null
+console.log("Find index of false in mixed:", findIndex(mixedArr,false));// null
+
+// slice 함수 테스트
+console.log("Slice numbers from 1 to 3:", slice(numbersArr, 1, 3)); // [2, 3]
+console.log("Slice strings from 0 to 2:", slice(stringsArr, 0, 2)); // ["apple", "banana"]
