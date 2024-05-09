@@ -57,3 +57,20 @@ console.log("Find index of false in mixed:", findIndex(mixedArr,false));// null
 // slice 함수 테스트
 console.log("Slice numbers from 1 to 3:", slice(numbersArr, 1, 3)); // [2, 3]
 console.log("Slice strings from 0 to 2:", slice(stringsArr, 0, 2)); // ["apple", "banana"]
+
+// 테스트 데이터
+const emptyArray: any[] = [];
+const nullArray = null; // 타입스크립트에서는 이렇게 직접 사용할 수 없으므로 주석 처리를 해제하면 오류가 발생합니다.
+const undefinedArray = undefined; // 마찬가지로 직접 사용시 오류가 발생합니다.
+
+// 테스트 케이스 실행
+console.log("Last element of empty array:", last(emptyArray)); // undefined
+console.log("Prepend 'test' to empty array:", prepend(emptyArray, 'test')); // ['test']
+console.log("Mix empty array with ['hello']:", mix(emptyArray, ['hello'])); // ['hello']
+console.log("Count of empty array:", count(emptyArray)); // 0
+console.log("Find index of 'test' in empty array:", findIndex(emptyArray, 'test')); // null
+console.log("Slice empty array from 0 to 1:", slice(emptyArray, 0, 1)); // []
+
+// null과 undefined 배열을 함수 인자로 사용하는 것은 타입스크립트에서 타입 오류를 발생시키므로, 주석 처리된 테스트 케이스는 실제 환경에서는 주의하여 사용하세요.
+// console.log("Count of null array:", count(nullArray)); // TypeError
+// console.log("Count of undefined array:", count(undefinedArray)); // TypeError
