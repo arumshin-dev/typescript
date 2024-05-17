@@ -1,8 +1,10 @@
 {
 	"include" : ["src"],
 	"compilerOptions": {
-		"outDir": "build",                              /* Redirect output structure to the directory. */
-		"target": "ES6",                                /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015'," */
-		"lib": ["ES6", "DOM"]
+		"outDir": "build",
+		"esModuleInterop": true,
+		"target": "ES6",
+		"lib": ["ES6", "dom"],
+		"strict": true
 	},
 }
