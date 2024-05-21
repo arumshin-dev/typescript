@@ -10,4 +10,51 @@ JSDoc을 사용하는 방법에 대한 자세한 사항은 공식 문서를 참�
 @ts-check은 자바스크립트에서 오류를 활성화해줍니다. 해당 기능을 원치 않으실 경우 끌 수도 있습니다.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
+// Your task is to translate the JSDoc comments of the following files to Typescript Type Declarations.
+// 여러분들의 목표는 다음 JSDoc 파일들의 주석 부분들을 타입스크립트 타입 정의로 바꾸는 것입니다.
+// head.js: https://github.com/lodash/lodash/blob/main/src/head.ts
+// import {head} from "head";
+// hasIn.js: https://github.com/lodash/lodash/blob/main/src/hasIn.ts
+//import {hasIn} from "hasIn";
+// isBoolean.js: https://github.com/lodash/lodash/blob/main/src/isBoolean.ts
+//import {isBoolean} from "isBoolean";
+// toString.js: https://github.com/lodash/lodash/blob/main/src/toString.ts
+// split.js: https://github.com/lodash/lodash/blob/main/src/split.ts
+// hasPath.js: https://github.com/lodash/lodash/blob/main/src/hasPath.ts
+// filter.js: https://github.com/lodash/lodash/blob/main/src/filter.ts
+// every.js: https://github.com/lodash/lodash/blob/main/src/every.ts
+// map.js: https://github.com/lodash/lodash/blob/main/src/map.ts
+const lodashMini_1 = require("lodashMini");
+console.log((0, lodashMini_1.head)([1, 2, 3]));
+console.log((0, lodashMini_1.head)([]));
+const object = { 'a': { 'b': 2 } };
+console.log((0, lodashMini_1.hasIn)(object, 'a'));
+console.log((0, lodashMini_1.hasIn)(object, 'b'));
+console.log((0, lodashMini_1.hasIn)(object, 'c'));
+console.log((0, lodashMini_1.isBoolean)(false));
+console.log((0, lodashMini_1.isBoolean)(true));
+console.log((0, lodashMini_1.isBoolean)(null));
+console.log((0, lodashMini_1.isBoolean)(undefined));
+console.log((0, lodashMini_1.toString)(0));
+console.log((0, lodashMini_1.toString)(1));
+console.log((0, lodashMini_1.toString)(false));
+console.log((0, lodashMini_1.toString)(null));
+console.log((0, lodashMini_1.toString)(['1', '2', '3']));
+console.log((0, lodashMini_1.split)('a-b-c', '-', 2));
+console.log((0, lodashMini_1.hasPath)(object, 'a.b'));
+console.log((0, lodashMini_1.hasPath)(object, 'a.c'));
+console.log((0, lodashMini_1.hasPath)(object, ['a', 'b']));
+const user = [{ 'user': 'barney', 'active': true },
+    { 'user': 'fred', 'active': false }];
+function test(obj) {
+    return obj.active == true;
+}
+//console.log(filter(user, (e) => {return e.active==true}));
+//console.log(filter(user, (e) => {return e.active}));
+console.log((0, lodashMini_1.filter)(user, test));
+console.log((0, lodashMini_1.every)([true, 1, null, 'yes'], Boolean));
+function square(n) {
+    return n * n;
+}
+console.log((0, lodashMini_1.map)([4, 8], square));
 // 함수를 실행시키는 것까지 하실 필요는 없습니다. 타입 정의만 만드시면 충분합니다.
